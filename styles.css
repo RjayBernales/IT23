@@ -819,12 +819,46 @@ header nav a:hover{
         width: 100%;
     }
 }
+/* Custom styles for cart modal */
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.cart-content {
+    background-color: #fff;
+    width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.cart-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.cart-content ul li {
+    margin: 10px 0;
+}
+
+.cart-content button {
+    margin-top: 20px;
+}
 .copyright{
     padding: 20px;
     text-align: center;
     background-color: white;
     color: black;
 }
+
 
 
 

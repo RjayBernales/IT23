@@ -132,7 +132,7 @@
                      
                     <div class="social">
                         <a href="#"><i class="far fa-heart"></i></a>
-                        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="#" class="add-to-cart" data-product="Barako (Liberica) Coffee Beans" data-price="350.00">Add to Cart</a>
                         <a href="#"><i class="fas fa-share-alt"></i></a>
                         <a href="#"><i class="fas fa-search"></i></a>
                     </div>
@@ -159,7 +159,7 @@
                      
                     <div class="social">
                         <a href="#"><i class="far fa-heart"></i></a>
-                        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="#" class="add-to-cart" data-product="Arabica Coffee Beans" data-price="400.00">Add to Cart</a>
                         <a href="#"><i class="fas fa-share-alt"></i></a>
                         <a href="#"><i class="fas fa-search"></i></a>
                     </div>
@@ -187,7 +187,7 @@
                      
                     <div class="social">
                         <a href="#"><i class="far fa-heart"></i></a>
-                        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="#" class="add-to-cart" data-product="Robusta Coffee Beans" data-price="250.00">Add to Cart</a>
                         <a href="#"><i class="fas fa-share-alt"></i></a>
                         <a href="#"><i class="fas fa-search"></i></a>
                     </div>
@@ -215,7 +215,7 @@
                      
                     <div class="social">
                         <a href="#"><i class="far fa-heart"></i></a>
-                        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="#" class="add-to-cart" data-product="Single-Origin Specialty Beans" data-price="500.00">Add to Cart</a>
                         <a href="#"><i class="fas fa-share-alt"></i></a>
                         <a href="#"><i class="fas fa-search"></i></a>
                     </div>
@@ -243,7 +243,7 @@
                     
                     <div class="social">
                         <a href="#"><i class="far fa-heart"></i></a>
-                        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="#" class="add-to-cart" data-product="Croissant" data-price="100.00">Add to Cart</a>
                         <a href="#"><i class="fas fa-share-alt"></i></a>
                         <a href="#"><i class="fas fa-search"></i></a>
                     </div>
@@ -270,7 +270,7 @@
                     
                     <div class="social">
                         <a href="#"><i class="far fa-heart"></i></a>
-                        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="#" class="add-to-cart" data-product="Cinnamon Roll" data-price="130.00">Add to Cart</a>
                         <a href="#"><i class="fas fa-share-alt"></i></a>
                         <a href="#"><i class="fas fa-search"></i></a>
                     </div>
@@ -297,7 +297,7 @@
                      
                     <div class="social">
                         <a href="#"><i class="far fa-heart"></i></a>
-                        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="#" class="add-to-cart" data-product="Scone" data-price="120.00">Add to Cart</a>
                         <a href="#"><i class="fas fa-share-alt"></i></a>
                         <a href="#"><i class="fas fa-search"></i></a>
                     </div>
@@ -324,7 +324,7 @@
                      
                     <div class="social">
                         <a href="#"><i class="far fa-heart"></i></a>
-                        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="#" class="add-to-cart" data-product="Bagel" data-price="80.00">Add to Cart</a>
                         <a href="#"><i class="fas fa-share-alt"></i></a>
                         <a href="#"><i class="fas fa-search"></i></a>
                     </div>
@@ -348,6 +348,17 @@
     </div>
     <!-- end section three  -->
     </section>
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <h2>Your Cart</h2>
+            <ul id="cart-items">
+                <!-- Cart items will appear here -->
+            </ul>
+            <p>Total: ₱<span id="cart-total">0.00</span></p>
+            <button id="checkout-btn">Checkout</button>
+            <button id="close-cart-btn">Close</button>
+        </div>
+    </div>
     <!-- start section four  -->
     
    
