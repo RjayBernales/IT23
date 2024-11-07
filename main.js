@@ -18,43 +18,61 @@ window.onload = ()=>{
     homeContent.style.left = "50px"
 }
 
-        let cart = [];
+let cart = []; // Array to hold cart items
 
-        // Add to cart functionality
-        $(document).on("click", ".add-to-cart", function(e) {
-            e.preventDefault();
+// Function to update the cart and display it in the modal
+function updateCart() {
+    let cartItems = document.getElementById('cart-items');
+    let cartTotal = document.getElementById('cart-total');
+    
+    // Clear the current cart display
+    cartItems.innerHTML = '';
 
-            let productName = $(this).data("product");
-            let productPrice = parseFloat($(this).data("price"));
-            let cartItem = { name: productName, price: productPrice };
+    let total = 0;
 
-            // Add the item to the cart
-            cart.push(cartItem);
+    // Loop through cart items and display them
+    cart.forEach(item => {
+        let listItem = document.createElement('li');
+        listItem.textContent = `${item.name} - ₱${item.price}`;
+        cartItems.appendChild(listItem);
+        total += parseFloat(item.price); // Update total price
+    });
 
-            // Update the cart modal
-            updateCart();
-        });
+    // Update the total price
+    cartTotal.textContent = total.toFixed(2);
+}
 
-        // Update cart display
-        function updateCart() {
-            let cartItemsList = $("#cart-items");
-            cartItemsList.empty();
-            let total = 0;
+// Function to add product to the cart
+function addToCart(productName, productPrice) {
+    cart.push({ name: productName, price: productPrice });
+    updateCart();
+    document.getElementById('cart-modal').style.display = 'flex'; // Show cart modal when a product is added
+}
 
-            cart.forEach(item => {
-                cartItemsList.append(`<li>${item.name} - ₱${item.price.toFixed(2)}</li>`);
-                total += item.price;
-            });
+// Event listener for Add to Cart buttons
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function(event) {
+        let productName = event.target.getAttribute('data-product');
+        let productPrice = event.target.getAttribute('data-price');
+        addToCart(productName, productPrice);
+    });
+});
 
-            $("#cart-total").text(total.toFixed(2));
-        }
+// Event listener for Checkout button
+document.getElementById('checkout-btn').addEventListener('click', function() {
+    if (cart.length === 0) {
+        alert('Your cart is empty!');
+    } else {
+        alert('Proceeding to checkout...');
+        // You can add checkout functionality here
+        // For example, submitting the cart to a backend, or just clearing the cart
+        cart = []; // Empty the cart
+        updateCart();
+        document.getElementById('cart-modal').style.display = 'none'; // Hide the modal
+    }
+});
 
-        // Show the cart modal
-        $("#checkout-btn").on("click", function() {
-            alert("Proceeding to checkout...");
-        });
-
-        // Close the cart modal
-        $("#close-cart-btn").on("click", function() {
-            $("#cart-modal").hide();
-        });
+// Event listener for Close Cart button
+document.getElementById('close-cart-btn').addEventListener('click', function() {
+    document.getElementById('cart-modal').style.display = 'none'; // Close the cart modal
+});
